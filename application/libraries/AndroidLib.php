@@ -16,7 +16,8 @@ class AndroidLib{
 	
 		$fields = array(
 			'data' => array(
-				'notification_message' => urldecode($message),
+				'notification_message' => $message,
+				'notification_info' => $input_source,
 				'notification_time' => date('H:i:s')
 			),
 			'registration_ids' => $registration_ids
