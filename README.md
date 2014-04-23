@@ -5,7 +5,7 @@ KendaliPintuWeb is a web that control an Arduino based hardware and act as a ser
 
 The Android part is [here] (https://github.com/Dimasdanz/KendaliPintuAndroid)
 
-The Arduino part is **Under Development**
+The Arduino part is [here] (https://github.com/Dimasdanz/KendaliPintuArduino)
 
 This repository is only intended as a backup from my computer.
 
