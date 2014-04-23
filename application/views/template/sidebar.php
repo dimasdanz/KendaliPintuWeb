@@ -29,6 +29,6 @@
 	</div>
 </nav>
 <script>
-$("#<?=$this->uri->segment(1, 'dashboard')?>").addClass("active");
-$("#<?=$this->uri->segment(1, 'dashboard')?>").addClass("selected");
+$("#<?php echo $this->uri->segment(1, 'dashboard')?>").addClass("active");
+$("#<?php echo $this->uri->segment(1, 'dashboard')?>").addClass("selected");
 </script>

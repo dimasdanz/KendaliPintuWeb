@@ -3,7 +3,7 @@
 	?>
 		<div class="alert alert-success alert-dismissable">
 			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-			<?=$this->session->flashdata('success')?>
+			<?php echo $this->session->flashdata('success')?>
 		</div>
     <?php 
     	}
@@ -30,20 +30,20 @@
 									foreach ($users_list as $row){
 							?>
 								<tr>
-									<td><?=$no?></td>
+									<td><?php echo $no?></td>
 									<td>
-										<?=$row->name?>
-										<input type="hidden" id="name_<?=$row->user_id?>" value="<?=$row->name?>">
+										<?php echo $row->name?>
+										<input type="hidden" id="name_<?php echo $row->user_id?>" value="<?php echo $row->name?>">
 									</td>
-									<td><?=$row->user_id?></td>
+									<td><?php echo $row->user_id?></td>
 									<td>
-										<?=$row->password?>
-										<input type="hidden" id="password_<?=$row->user_id?>" value="<?=$row->password?>">
+										<?php echo $row->password?>
+										<input type="hidden" id="password_<?php echo $row->user_id?>" value="<?php echo $row->password?>">
 									</td>
 									<td>
-										<a href="#" class="btn btn-default edit" data-toggle="modal" data-target="#modal_add" id="<?=$row->user_id?>">
+										<a href="#" class="btn btn-default edit" data-toggle="modal" data-target="#modal_add" id="<?php echo $row->user_id?>">
 										<i class="fa fa-edit"></i> Ubah</a>
-										<a href="#" class="btn btn-danger delete" id="<?=$row->user_id?>" data-toggle="modal" data-target="#modal_confirm"><i class="fa fa-trash-o"></i> Hapus</a>
+										<a href="#" class="btn btn-danger delete" id="<?php echo $row->user_id?>" data-toggle="modal" data-target="#modal_confirm"><i class="fa fa-trash-o"></i> Hapus</a>
 									</td>
 								</tr>
 							<?php 
@@ -65,7 +65,7 @@
 <div class="modal fade" id="modal_add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form role="form" method="post" action="<?=base_url()?>users/insert" id="user_form">
+			<form role="form" method="post" action="<?php echo base_url()?>users/insert" id="user_form">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						<h4 class="modal-title" id="myModalLabel">Form Pengguna</h4>
@@ -77,22 +77,22 @@
 					?>
 					<div class="alert alert-danger alert-dismissable">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-							<?=$form_data[3]?>
+							<?php echo $form_data[3]?>
 					</div>
 					<?php
 						}
 					?>
 					<div class="form-group">
 						<label>ID</label>
-						<input class="form-control" placeholder="ID" type="text" name="id" id="id" value="<?=isset($form_data[0]) ? $form_data[0] : ''?>" readonly>
+						<input class="form-control" placeholder="ID" type="text" name="id" id="id" value="<?php echo isset($form_data[0]) ? $form_data[0] : ''?>" readonly>
 					</div>
 					<div class="form-group">
 						<label>Nama</label>
-						<input class="form-control" placeholder="Nama" type="text" name="name" id="name" required value="<?=isset($form_data[1]) ? $form_data[1] : ''?>">
+						<input class="form-control" placeholder="Nama" type="text" name="name" id="name" required value="<?php echo isset($form_data[1]) ? $form_data[1] : ''?>">
 					</div>
 					<div class="form-group">
 						<label>Kata Sandi</label>
-						<input class="form-control" placeholder="Kata Sandi" type="text" name="password" id="password" required value="<?=isset($form_data[2]) ? $form_data[2] : ''?>">
+						<input class="form-control" placeholder="Kata Sandi" type="text" name="password" id="password" required value="<?php echo isset($form_data[2]) ? $form_data[2] : ''?>">
 						<p class="help-block">Maksimal 5 karakter</p>
 						<p class="help-block">Harus berupa angka 0-9</p>
 					</div>
@@ -117,17 +117,17 @@
                 <p id="confirm_str"></p>
             </div>
             <div class="modal-footer">
-            	<?=form_open(base_url()."users/delete")?>
+            	<?php echo form_open(base_url()."users/delete")?>
 	            	<input type="hidden" name="user_id" id="user_id">
 	                <button type="submit" class="btn btn-success" id="yes">Ya</button>
 	                <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
-                <?=form_close()?>
+                <?php echo form_close()?>
             </div>
         </div>
     </div>
 </div>
-<script src="<?=base_url()?>assets/js/plugins/dataTables/jquery.dataTables.js"></script>
-<script src="<?=base_url()?>assets/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/dataTables/jquery.dataTables.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 <script>
 	$(document).ready(function(){
 		<?php
@@ -138,13 +138,13 @@
 			<?php 
 				if($error[4] == 'insert'){
 			?>
-					$('#user_form').attr('action', '<?=base_url()?>users/insert');
+					$('#user_form').attr('action', '<?php echo base_url()?>users/insert');
 					$('#add').show();
 					$('#update').hide();
 			<?php 
 				}else{
 			?>
-					$('#user_form').attr('action', '<?=base_url()?>users/update');
+					$('#user_form').attr('action', '<?php echo base_url()?>users/update');
 					$('#add').hide();
 					$('#update').show();
 			<?php 
@@ -184,16 +184,16 @@
 		});
 
 		$('body').delegate('.add', 'click', function () {
-			$('#user_form').attr('action', '<?=base_url()?>users/insert');
+			$('#user_form').attr('action', '<?php echo base_url()?>users/insert');
 			$('#add').show();
 			$('#update').hide();
-			$('#id').val("<?=$form_data[0]?>");
+			$('#id').val("<?php echo $form_data[0]?>");
 			$('#name').val("");
 			$('#password').val("");
 		});
 
 		$('body').delegate('.edit', 'click', function () {
-			$('#user_form').attr('action', '<?=base_url()?>users/update');
+			$('#user_form').attr('action', '<?php echo base_url()?>users/update');
 			$('#add').hide();
 			$('#update').show();
 			$('#id').val(this.id);

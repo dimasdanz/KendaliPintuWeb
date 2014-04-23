@@ -63,7 +63,7 @@
         </div>
     </div>
 </div>
-<script src="<?=base_url()?>assets/js/bootstrap-switch.js"></script>
+<script src="<?php echo base_url()?>assets/js/bootstrap-switch.js"></script>
 <script>
 function on_checked(){
 	$("#status_switch").bind('switch-change', function (e, data) {
@@ -81,7 +81,7 @@ function on_checked(){
 
 function check_arduino(){
 	console.log("checking");
-	$.getJSON('<?=base_url()?>api/arduino/check_arduino', function(data) {
+	$.getJSON('<?php echo base_url()?>api/arduino/check_arduino', function(data) {
 		if(data.response == 'active'){
 			$('#status_text').html('Aktif');
 			$('#status_switch').prop('disabled', false);
@@ -103,7 +103,7 @@ function check_arduino(){
 
 var lastData = new Array(new Object());
 function poll_today_log(){
-	$.getJSON('<?=base_url()?>api/web/today_log', function(data) {
+	$.getJSON('<?php echo base_url()?>api/web/today_log', function(data) {
 		if(lastData[0].time != data[0].time){
 			$("#today_log_table").html("");
 			var new_col;

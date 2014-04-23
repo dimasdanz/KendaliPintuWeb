@@ -20,11 +20,11 @@
 									foreach ($logs_list as $row){
 							?>
 								<tr>
-									<td><?=$no?></td>
-									<td><?=$row->name?></td>
-									<td><?=date('H:i:s', strtotime($row->time))?></td>
-									<td><?=date('d F Y', strtotime($row->time))?></td>
-									<td><?=$row->input_source?></td>
+									<td><?php echo $no?></td>
+									<td><?php echo $row->name?></td>
+									<td><?php echo date('H:i:s', strtotime($row->time))?></td>
+									<td><?php echo date('d F Y', strtotime($row->time))?></td>
+									<td><?php echo $row->input_source?></td>
 								</tr>
 							<?php 
 									$no++;
@@ -39,8 +39,8 @@
 		</div>
 	</div>
 </div>
-<script src="<?=base_url()?>assets/js/plugins/dataTables/jquery.dataTables.js"></script>
-<script src="<?=base_url()?>assets/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/dataTables/jquery.dataTables.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 <script>
 	$(document).ready(function(){
 		$('#dataTables-dcs_log').dataTable({

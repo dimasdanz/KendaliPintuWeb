@@ -11,12 +11,12 @@
 					?>
 						<div class="alert alert-danger alert-dismissable">
 							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-							<?=$this->session->flashdata('error')?>
+							<?php echo $this->session->flashdata('error')?>
 						</div>
 				    <?php 
 				    	}
 				    ?>
-					<?=form_open(base_url().'login/validate')?>
+					<?php echo form_open(base_url().'login/validate')?>
 						<fieldset>
 							<div class="form-group">
 								<input class="form-control" placeholder="Username" name="username" type="text" autofocus>
@@ -26,7 +26,7 @@
 							</div>
 							<button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
 						</fieldset>
-					<?=form_close()?>
+					<?php echo form_close()?>
 				</div>
 			</div>
 		</div>
