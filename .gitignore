@@ -1,0 +1,16 @@
+.DS_Store
+
+.settings/*
+.buildpath
+.project
+.idea/*
+lib/*
+sample/*
+
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
