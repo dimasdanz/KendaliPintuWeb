@@ -6,7 +6,7 @@ class arduino extends CI_Controller{
 		$this->load->library('ArduinoLib');
 	}
 	
-	public function auth_user($input){
+	public function auth_user($input = ''){
 		$this->load->model('User_model');
 		$this->load->library('LoggerLib');
 		if($input == 'keluar'){
@@ -27,6 +27,12 @@ class arduino extends CI_Controller{
 		}
 	}
 
+	/*
+	 * Response
+	 * active => Active
+	 * inactive => Inactive
+	 * offline => Offline
+	 * */
 	public function check_arduino(){
 		header('Content-Type: text/json');
 		$data = $this->arduinolib->get_status('c');
@@ -38,13 +44,11 @@ class arduino extends CI_Controller{
 	}
 	
 	public function deactivate(){
-		$this->load->library('LoggerLib');
 		$response['result'] = $this->arduinolib->deactivate();
 		echo json_encode($response);
 	}
 	
 	public function activate(){
-		$this->load->library('LoggerLib');
 		$response['result'] = $this->arduinolib->activate();
 		echo json_encode($response);
 	}
