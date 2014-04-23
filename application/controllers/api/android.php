@@ -95,9 +95,11 @@ class android extends CI_Controller{
 		$data = $this->Log_model->get_date_detail($param);
 		$response['name'] = array();
 		$response['time'] = array();
+		$response['info'] = array();
 		foreach($data as $row){
 			array_push($response['name'], $row->name);
 			array_push($response['time'], date('h:i:s', strtotime($row->time)));
+			array_push($response['info'], $row->input_source);
 		}
 		echo json_encode($response);
 	}
