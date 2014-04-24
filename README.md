@@ -1,16 +1,25 @@
 KendaliPintuWeb
 ===============
-### Dimas Rullyan Danu (dimasdanz@gmail.com)
+#### Dimas Rullyan Danu (dimasdanz@gmail.com)
 
 KendaliPintuWeb is a web that control an Arduino based hardware and act as a server-side of an Android Application for my College Final Project.
 
-The Android part is [here] (https://github.com/Dimasdanz/KendaliPintuAndroid)
-
+The Android part is [here] (https://github.com/Dimasdanz/KendaliPintuAndroid)  
 The Arduino part is [here] (https://github.com/Dimasdanz/KendaliPintuArduino)
 
-This repository is only intended as a backup from my computer.
-
+This repository is only intended as a backup from my computer.  
 I will NOT answer any question regading of this repository.
+
+##  Description
+Door Control is an Arduino based hardware controlled by a web and an Android Application.  
+This hardware is used to control a door, and authorize people and record every user who uses the door.  
+The Arduino can be enabled/disabled via Android and Web.  
+Door can be opened by tapping an NFC-Enabled Android device to a specific nfc tag.  
+There is also a keypad on the hardware for manual password input.  
+Every log such as enabling/disabling, people enter or exit will be recorded and will send a notification to Android device.  
+To use the Android app, you need to login as user which stored in the database.  
+To enable all function of the Android app, you need to login as admin which also stored in the database.  
+CRUD operation of user and admin is done via the web.
 
 ## License
 Copyright (C) 2014 Dimas Rullyan Danu
