@@ -24,7 +24,7 @@ class AndroidLib{
 		);
 	
 		$headers = array(
-			'Authorization: key=' . 'AIzaSyCNvec01uSRgGsz7IW9ei6zSfkfCcGXTwY',
+			'Authorization: key=' . GOOGLE_PUBLIC_API_KEY,
 			'Content-Type: application/json'
 		);
 	
