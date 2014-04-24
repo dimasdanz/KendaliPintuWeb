@@ -4,7 +4,7 @@
 			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="index.html"><img src="<?php echo base_url()?>assets/images/logo.png">Sistem Kendali Pintu</a>
+		<a class="navbar-brand" href="<?php echo site_url('/')?>"><img src="<?php echo base_url()?>assets/images/logo.png">Sistem Kendali Pintu</a>
 	</div>
 
 	<ul class="nav navbar-top-links navbar-right">

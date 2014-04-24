@@ -2,7 +2,7 @@
 	<div class="sidebar-collapse">
 		<ul class="nav" id="side-menu">
 			<li id="dashboard">
-				<a href="<?php echo site_url('/')?>"><i class="fa fa-dashboard fa-fw"></i> Beranda</a>
+				<a href="<?php echo site_url('/')?>"><i class="fa fa-home fa-fw"></i> Beranda</a>
 			</li>
 			<li id="users">
 				<a href="<?php echo site_url('/users')?>"><i class="fa fa-users fa-fw"></i> Pengguna</a>
@@ -18,9 +18,8 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="text-left">
-						<p class="credit">
-							<a href="http://twitter.com/Dimasdanz" target="_blank">Dimas Rullyan Danu</a> &copy; 2014
-						</p>
+						<p class="text-muted credit"><a href="<?php echo site_url('/about')?>">About</a></p>
+						<p class="text-muted credit">&copy; 2014 Dimas Rullyan Danu</p>
 						<p class="text-muted credit small">Powered by SB-Admin</p>
 					</div>
 				</div>

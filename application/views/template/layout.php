@@ -42,6 +42,10 @@
 					$header = 'Admin';
 					$icon = 'user';
 					break;
+				case 'about':
+					$header = 'About';
+					$icon = 'tasks';
+					break;
 				default:
 					$header = 'Beranda';
 					$icon = 'home';
